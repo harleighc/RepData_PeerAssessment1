@@ -7,14 +7,14 @@ output:
 
 
 ## Loading and preprocessing the data
-```{r}
+```{r , echo = TRUE}
 ## activity.csv must be unzipped in your working directory
 data <- read.table("activity.csv", sep = ",", header = TRUE)
 data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 ```
 
 ## What is mean total number of steps taken per day?
-```{r}
+```{r, echo = TRUE}
 library(lattice)
 dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = T)
 histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
@@ -26,7 +26,7 @@ print(paste("The mean daily steps is ", dailysummean, " and the median daily ste
 
 
 ## What is the average daily activity pattern?
-```{r}
+```{r, echo = TRUE}
 fiveminaverage <- aggregate(data$steps, list(data$interval), mean, na.rm= T)
 
 xyplot(x~Group.1, data = fiveminaverage, type = "l", ylab = "Average number of steps taken", xlab = "5-minute interval")
@@ -36,7 +36,7 @@ print(paste("The 5-minute interval that contains the maximum number of steps is 
 ```
 
 ## Imputing missing values
-```{r}
+```{r, echo = TRUE}
 ## the following code replaces any NA data with its corresponding 5-minute interval average 
 replacedata <- data
 fiveminaverage <- aggregate(data$steps, list(data$interval), mean, na.rm= T)
@@ -57,7 +57,7 @@ print(paste("The new mean daily steps is ", dailysumreplacedmean , " and the med
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r} 
+```{r, echo = TRUE} 
 weekdayanalysis <- replacedata
 
 weekdayanalysis$datefactor <- as.factor(weekdays(weekdayanalysis$date))
