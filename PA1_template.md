@@ -36,7 +36,7 @@ print(paste("The mean daily steps is ", dailysummean, " and the median daily ste
 
 
 
-## What is the average daily activity pattern??
+## What is the average daily activity pattern?
 
 ```r
 fiveminaverage <- aggregate(data$steps, list(data$interval), mean, na.rm= T)
