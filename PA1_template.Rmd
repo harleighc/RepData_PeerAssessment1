@@ -6,7 +6,7 @@ output:
 ---
 
 
-## Loading and preprocessing the data.
+## Loading and preprocessing the data..
 ```{r , echo = TRUE}
 ## activity.csv must be unzipped in your working directory
 data <- read.table("activity.csv", sep = ",", header = TRUE)

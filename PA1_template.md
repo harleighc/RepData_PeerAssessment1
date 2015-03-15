@@ -1,7 +1,12 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
-## Loading and preprocessing the data.
+## Loading and preprocessing the data..
 
 ```r
 ## activity.csv must be unzipped in your working directory
@@ -17,7 +22,7 @@ dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = T)
 histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 ```r
 dailysummean <- mean(dailysum$x)
@@ -39,7 +44,7 @@ fiveminaverage <- aggregate(data$steps, list(data$interval), mean, na.rm= T)
 xyplot(x~Group.1, data = fiveminaverage, type = "l", ylab = "Average number of steps taken", xlab = "5-minute interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 ```r
 maxinterval <- fiveminaverage[which.max(fiveminaverage$x),1]
@@ -70,7 +75,7 @@ dailysumreplacedmedian <- median(dailysumreplaced$x, na.rm = T)
 histogram(~x, data = dailysumreplaced, type = "count", xlab = "Steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 ```r
 print(paste("The new mean daily steps is ", dailysumreplacedmean , " and the median daily steps is ", dailysumreplacedmedian) ) 
@@ -94,4 +99,4 @@ weekdayanalysissum <- aggregate(weekdayanalysis$steps, list(weekdayanalysis$inte
 xyplot(x~Group.1 | Group.2, data = weekdayanalysissum, type = "l", layout = c(1,2), xlab = "5-minute interval", ylab = "average steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
