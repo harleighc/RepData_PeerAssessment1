@@ -208,7 +208,7 @@ data &lt;- read.table(&quot;activity.csv&quot;, sep = &quot;,&quot;, header = TR
 data$date &lt;- as.POSIXct(data$date, format = &quot;%Y-%m-%d&quot; )
 </code></pre>
 
-<h2>What is mean total number of steps taken per day?</h2>
+<h2>What is mean total number of steps taken per day??</h2>
 
 <pre><code class="r">library(lattice)
 dailysum &lt;- aggregate(data$steps, list(data$date), sum, na.rm = T)
