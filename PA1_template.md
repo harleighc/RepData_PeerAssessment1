@@ -19,7 +19,7 @@ data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 ```r
 library(lattice)
 dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = F)
-histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
+histogram(~x, data = dailysum, type = "count", xlab = "steps per day")
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
