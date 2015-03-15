@@ -17,7 +17,7 @@ data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 ```{r, echo = TRUE}
 library(lattice)
 dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = F)
-histogram(~x, data = dailysum, type = "count", xlab = "steps per day")
+histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
 dailysummean <- mean(dailysum$x)
 dailysummedian <- median(dailysum$x)
 print(paste("The mean daily steps is ", dailysummean, " and the median daily steps is ", dailysummedian))
