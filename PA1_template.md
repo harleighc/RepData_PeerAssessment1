@@ -18,7 +18,7 @@ data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 
 ```r
 library(lattice)
-dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = T)
+dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = F)
 histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
 ```
 
@@ -31,12 +31,12 @@ print(paste("The mean daily steps is ", dailysummean, " and the median daily ste
 ```
 
 ```
-## [1] "The mean daily steps is  9354.22950819672  and the median daily steps is  10395"
+## [1] "The mean daily steps is  NA  and the median daily steps is  NA"
 ```
 
 
 
-## What is the average daily activity pattern?
+## What is the average daily activity pattern??
 
 ```r
 fiveminaverage <- aggregate(data$steps, list(data$interval), mean, na.rm= T)
