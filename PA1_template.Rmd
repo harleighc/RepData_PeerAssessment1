@@ -16,7 +16,7 @@ data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 ## What is mean total number of steps taken per day??
 ```{r, echo = TRUE}
 library(lattice)
-dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = F)
+dailysum <- aggregate(data$steps, list(data$date), sum, na.rm = T)
 histogram(~x, data = dailysum, type = "count", xlab = "Steps per day")
 dailysummean <- mean(dailysum$x)
 dailysummedian <- median(dailysum$x)
