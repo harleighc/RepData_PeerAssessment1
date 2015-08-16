@@ -9,7 +9,7 @@ data <- read.table("activity.csv", sep = ",", header = TRUE)
 data$date <- as.POSIXct(data$date, format = "%Y-%m-%d" )
 ```
 
-## What is mean total number of steps taken per day??
+## What is mean total number of steps taken per day???
 
 ```r
 library(lattice)
