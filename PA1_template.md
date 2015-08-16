@@ -67,7 +67,7 @@ dailysumreplaced <- aggregate(replacedata$steps, list(replacedata$date), sum)
 dailysumreplacedmean <- mean(dailysumreplaced$x, na.rm = T)
 dailysumreplacedmedian <- median(dailysumreplaced$x, na.rm = T)
 
-histogram(~x, data = dailysumreplaced, type = "count", xlab = "Steps per day")
+histogram(~x, data = dailysumreplaced, type = "count", xlab = "Steps per day.")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
